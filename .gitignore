@@ -1,0 +1,7 @@
+*.swp
+.idea/
+pytest_cache/
+
+# coverage
+coverage.xml
+htmlcov/
