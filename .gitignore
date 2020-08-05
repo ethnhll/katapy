@@ -6,3 +6,6 @@ pytest_cache/
 coverage.xml
 htmlcov/
 .coverage
+
+# pylint
+pylint.txt
