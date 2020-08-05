@@ -30,8 +30,8 @@ jobs:
       run: poetry install --no-root
     - name: Run tests and generate coverage
       run: poetry run coverage run --branch -m pytest && poetry run coverage xml
-#     - name: SonarCloud Scan
-#       uses: SonarSource/sonarcloud-github-action@v1.3
+    - name: pylint
+      run: poetry run pylint -r n -f parseable katapy > pylint.txt
 
     - name: Run Sonar scanner
       env:
