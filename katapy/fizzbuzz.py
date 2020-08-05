@@ -1,5 +1,4 @@
 def fizzbuzz(number) -> str:
-    testString = "asdfkasd asdfkjaksdfklasdfkljasdlkfjla slkfjaslkdfjaklsdjf;lajsdfojawlkjfsdlka sdfklajsdflkjaslkdf asdlkj laksd jldfkaklsdjflka sdfkljasdklfjas;dlkfjas dfas dfklj"
     result = ""
     if number % 3 == 0:
         result += 'fizz'

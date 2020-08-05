@@ -26,12 +26,27 @@ jobs:
         python-version: 3.8
     - name: Setup Poetry
       uses: Gr1N/setup-poetry@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12'
+    - run: npm i violation-comments-to-github-command-line
     - name: Install dependencies
       run: poetry install --no-root
     - name: Run tests and generate coverage
       run: poetry run coverage run --branch -m pytest && poetry run coverage xml
     - name: pylint
       run: poetry run pylint -r n -f parseable --exit-zero katapy > pylint.txt
+    - name: comment on github PR
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      if: ${{ github.event_name == 'pull_request' }}
+      run: |
+        npx violation-comments-to-github-command-line \
+        -ot $GITHUB_TOKEN \
+        -ro ethnhll \
+        -rn katapy \
+        -prid $(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }') \
+        -v "PYLINT" "." ".*pylint\.txt$" "Pylint"
     - name: Run Sonar scanner
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
