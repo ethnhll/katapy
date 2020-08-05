@@ -29,4 +29,4 @@ jobs:
     - name: Install dependencies
       run: poetry install --no-root
     - name: Run tests and generate coverage
-      run: poetry run coverage run --branch -m pytest && coverage xml
+      run: poetry run coverage run --branch -m pytest && poetry run coverage xml
