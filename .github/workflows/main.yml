@@ -47,7 +47,6 @@ jobs:
         -rn katapy \
         -prid $(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }') \
         -v "PYLINT" "." "pylint.txt$" "Pylint"
-
     - name: Run Sonar scanner
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
