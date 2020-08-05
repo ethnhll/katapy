@@ -6,6 +6,6 @@ def test_fizzbuzz_prime_number():
     assert result == '7'
 
 
-# def test_fizzbuzz_divisible_by_three():
-#     result = fizzbuzz(7*3)
-#     assert result == 'fizz'
+def test_fizzbuzz_divisible_by_three():
+    result = fizzbuzz(7*3)
+    assert result == 'fizz'
