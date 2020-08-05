@@ -35,7 +35,7 @@ jobs:
     - name: Run tests and generate coverage
       run: poetry run coverage run --branch -m pytest && poetry run coverage xml
     - name: pylint
-      run: poetry run pylint -r n -f parseable katapy > pylint.txt
+      run: poetry run pylint -r n -f parseable --exit-zero katapy > pylint.txt
     - name: comment on github PR
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -46,8 +46,7 @@ jobs:
         -ro ethnhll \
         -rn katapy \
         -prid $(echo $GITHUB_REF | awk 'BEGIN { FS = "/" } ; { print $3 }') \
-        -v "PYLINT" "." "pylint.txt$" "Pylint"
-
+        -v "PYLINT" "." ".*pylint\.txt$" "Pylint"
     - name: Run Sonar scanner
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
