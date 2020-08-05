@@ -30,5 +30,5 @@ jobs:
 #       run: |
 #         curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
 #         export PATH="$HOME/.poetry/bin:$PATH"
-#     - name: poetry version
-#       run: poetry --version
+    - name: poetry version
+      run: poetry --version
