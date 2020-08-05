@@ -8,5 +8,9 @@ omit =
     *__init__*
 
 [report]
+include = 
+    katapy/*
+omit = 
+    *__init__*
 
 show_missing = True
