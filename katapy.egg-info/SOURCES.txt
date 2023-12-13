@@ -1,7 +1,0 @@
-README.rst
-setup.py
-katapy/__init__.py
-katapy.egg-info/PKG-INFO
-katapy.egg-info/SOURCES.txt
-katapy.egg-info/dependency_links.txt
-katapy.egg-info/top_level.txt

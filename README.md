@@ -1,1 +1,1 @@
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ethnhll_katapy&metric=alert_status)](https://sonarcloud.io/dashboard?id=ethnhll_katapy)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
